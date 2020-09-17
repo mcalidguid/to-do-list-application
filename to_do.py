@@ -27,24 +27,27 @@ while True:
     user_input = int(input(">>>: "))
 
     if user_input == 1:
-        item = input(">>> Add item to the list: ")
+        item = input(">>>: Add item to the list: ")
         todo.add(item)
-        print("Item is added successfully")
+        print(">>>: Item is added successfully")
 
     elif user_input == 2:
         items = todo.get()
-        print("Item List:")
+        print(">>>: >>>: Item List:")
         for item in range(len(items)):
             print(item+1, ".", items[item])
 
     elif user_input == 3:
         items = todo.get()
-        print("Item List:")
+        print(">>>: Item List:")
         for item in range(len(items)):
             print(item + 1, ".", items[item])
-        item = int(input(">>> Enter the item number: "))
+        item = int(input(">>>: Enter the item number: "))
         result = todo.delete(item-1)
         if result == -1:
-            print("Invalid item number")
+            print(">>>: Invalid item number. Please try again")
         else:
-            print("Item is removed from the list")
+            print(">>>: Item is removed from the list")
+
+    else:
+        print(">>>: Invalid input")
