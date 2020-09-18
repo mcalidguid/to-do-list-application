@@ -37,7 +37,16 @@ while True:
         print(">>>: Item is added successfully")
 
     elif user_input == 2:
-        print("in progress")
+        #items = todo.get()
+        print(">>>: Item List:")
+        #for item in range(len(items)):
+        #    print(item + 1, ".", items[item])
+        #item = int(input(">>>: Enter the item number: "))
+        #result = todo.delete(item-1)
+        #if result == -1:
+        #    print(">>>: Invalid item number. Please try again")
+        #else:
+        #    print(">>>: Item is removed from the list")
 
     elif user_input == 3:
         items = todo.get()
