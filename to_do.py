@@ -5,7 +5,10 @@ class ToDo:
     def add(self, item):
         self.items.append(item)
 
-    def get(self):
+    #def update(self, item):
+    	#self.items.replace(item)
+
+   	def get(self):
         return self.items
 
     def delete(self, index):
@@ -22,8 +25,9 @@ while True:
     print("""---------------------
     Select an option:
         Enter \"1\" to add an item
-        Enter \"2\" to view the complete items
-        Enter \"3\" to delete the item""")
+        Enter \"2\" to update an item
+        Enter \"3\" to view the complete items
+        Enter \"4\" to delete the item""")
 
     user_input = int(input(">>>: "))
 
@@ -33,12 +37,15 @@ while True:
         print(">>>: Item is added successfully")
 
     elif user_input == 2:
+    	print("in progress")
+
+    elif user_input == 3:
         items = todo.get()
-        print(">>>: >>>: Item List:")
+        print(">>>: Item List:")
         for item in range(len(items)):
             print(item+1, ".", items[item])
 
-    elif user_input == 3:
+    elif user_input == 4:
         items = todo.get()
         print(">>>: Item List:")
         for item in range(len(items)):
