@@ -5,10 +5,10 @@ class ToDo:
     def add(self, item):
         self.items.append(item)
 
-    #def update(self, item):
-    	#self.items.replace(item)
+    # def update(self, item):
+    # 	self.items.replace(item)
 
-   	def get(self):
+    def get(self):
         return self.items
 
     def delete(self, index):
@@ -16,7 +16,7 @@ class ToDo:
             self.items.pop(index)
         except:
             return none
-            #-1
+            # -1
 
 
 todo = ToDo()
@@ -37,7 +37,7 @@ while True:
         print(">>>: Item is added successfully")
 
     elif user_input == 2:
-    	print("in progress")
+        print("in progress")
 
     elif user_input == 3:
         items = todo.get()
