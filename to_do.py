@@ -48,7 +48,7 @@ while True:
         #if result == -1:
         #    print(">>>: Invalid item number. Please try again")
         #else:
-        #    print(">>>: Item is removed from the list")
+        #    print(">>>: Item is modified successfully")
 
     elif user_input == 3:
         print("------- VIEW THE LIST -------")
@@ -68,7 +68,7 @@ while True:
         if result == -1:
             print(">>>: Invalid item number. Please try again")
         else:
-            print(">>>: Item is removed from the list")
+            print(">>>: Item is deleted successfully")
 
     else:
         print(">>>: Invalid input")
