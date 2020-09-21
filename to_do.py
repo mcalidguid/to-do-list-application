@@ -32,11 +32,13 @@ while True:
     user_input = int(input(">>>: "))
 
     if user_input == 1:
+        print("------- ADD AN ITEM -------")
         item = input(">>>: Add item to the list: ")
         todo.add(item)
         print(">>>: Item is added successfully")
 
     elif user_input == 2:
+        print("------- UPDATE AN ITEM -------")
         #items = todo.get()
         print(">>>: Item List:")
         #for item in range(len(items)):
@@ -49,12 +51,14 @@ while True:
         #    print(">>>: Item is removed from the list")
 
     elif user_input == 3:
+        print("------- VIEW THE LIST -------")
         items = todo.get()
         print(">>>: Item List:")
         for item in range(len(items)):
             print(item+1, ".", items[item])
 
     elif user_input == 4:
+        print("------- REMOVE AN ITEM -------")
         items = todo.get()
         print(">>>: Item List:")
         for item in range(len(items)):
