@@ -26,7 +26,9 @@ Select an option:
     Enter \"1\" to add an item
     Enter \"2\" to update an item
     Enter \"3\" to view the complete items
-    Enter \"4\" to delete the item""")
+    Enter \"4\" to delete the item
+    Enter \"q\" to exit
+    """)
 
     user_input = int(input(">>>: "))
 
@@ -66,6 +68,10 @@ Select an option:
             print("Invalid item number. Please try again.")
         else:
             print("Item is deleted successfully.")
+
+    elif user_input == "q":
+        print("Danke, tschüss!~")
+        break
 
     else:
         print("Invalid input.")
