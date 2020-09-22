@@ -15,32 +15,31 @@ class ToDo:
         try:
             self.items.pop(index)
         except:
-            return none
-            # -1
+            return 0
 
 
 todo = ToDo()
 
 while True:
     print("""---------------------
-    Select an option:
-        Enter \"1\" to add an item
-        Enter \"2\" to update an item
-        Enter \"3\" to view the complete items
-        Enter \"4\" to delete the item""")
+Select an option:
+    Enter \"1\" to add an item
+    Enter \"2\" to update an item
+    Enter \"3\" to view the complete items
+    Enter \"4\" to delete the item""")
 
     user_input = int(input(">>>: "))
 
     if user_input == 1:
         print("------- ADD AN ITEM -------")
-        item = input(">>>: Add item to the list: ")
+        item = input(">>> Add: ")
         todo.add(item)
-        print(">>>: Item is added successfully")
+        print("Item is added successfully.")
 
     elif user_input == 2:
         print("------- UPDATE AN ITEM -------")
         #items = todo.get()
-        print(">>>: Item List:")
+        print(">>>: Item List:")    # to be removed
         #for item in range(len(items)):
         #    print(item + 1, ".", items[item])
         #item = int(input(">>>: Enter the item number: "))
@@ -51,24 +50,22 @@ while True:
         #    print(">>>: Item is updated successfully")
 
     elif user_input == 3:
-        print("------- VIEW THE LIST -------")
+        print("------- TO DO LISTS -------")
         items = todo.get()
-        print(">>>: Item List:")
         for item in range(len(items)):
             print(item+1, ".", items[item])
 
     elif user_input == 4:
         print("------- REMOVE AN ITEM -------")
         items = todo.get()
-        print(">>>: Item List:")
         for item in range(len(items)):
             print(item + 1, ".", items[item])
-        item = int(input(">>>: Enter the item number: "))
+        item = int(input(">>> Enter the item number: "))
         result = todo.delete(item-1)
-        if result == -1:
-            print(">>>: Invalid item number. Please try again")
+        if result == 0:
+            print("Invalid item number. Please try again.")
         else:
-            print(">>>: Item is deleted successfully")
+            print("Item is deleted successfully.")
 
     else:
-        print(">>>: Invalid input")
+        print("Invalid input.")
