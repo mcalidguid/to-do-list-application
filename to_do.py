@@ -15,7 +15,7 @@ class ToDo:
         try:
             self.items.pop(index)
         except:
-            return 0
+            return -1
 
 
 todo = ToDo()
