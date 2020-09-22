@@ -27,7 +27,7 @@ Select an option:
     Enter \"2\" to update an item
     Enter \"3\" to view the complete items
     Enter \"4\" to delete the item
-    Enter \"q\" to exit
+    Enter \"5\" to exit
     """)
 
     user_input = int(input(">>>: "))
@@ -69,7 +69,7 @@ Select an option:
         else:
             print("Item is deleted successfully.")
 
-    elif user_input == "q":
+    elif user_input == 5:
         print("Danke, tschüss!~")
         break
 
