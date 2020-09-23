@@ -14,7 +14,7 @@ class ToDo:
     def delete(self, index):
         try:
             self.items.pop(index)
-        except:
+        except IndexError:
             return -1
 
 
