@@ -2,8 +2,8 @@ class ToDo:
     def __init__(self):
         self.items = []
 
-    def add(self, item):
-        self.items.append(item)
+    def add(self, entry):
+        self.items.append(entry)
 
     # def update(self, item):
     # 	self.items.replace(item)
