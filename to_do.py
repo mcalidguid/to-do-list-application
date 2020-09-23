@@ -8,7 +8,7 @@ class ToDo:
     # def update(self, item):
     # 	self.items.replace(item)
 
-    def get(self):
+    def get(self) -> object:
         return self.items
 
     def delete(self, index):
@@ -54,8 +54,11 @@ Select an option:
     elif user_input == 3:
         print("------- TO DO LISTS -------")
         items = todo.get()
-        for item in range(len(items)):
-            print(item+1, ".", items[item])
+        if items == []:
+            print("The list is currently empty.")
+        else:
+            for item in range(len(items)):
+                print(item+1, ".", items[item])
 
     elif user_input == 4:
         print("------- REMOVE AN ITEM -------")
