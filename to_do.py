@@ -41,7 +41,7 @@ Select an option:
     elif user_input == 2:
         print("------- UPDATE AN ITEM -------")
         items = todo.get()
-        if items == []:
+        if not items:
             print("The list is currently empty.")
         else:
             for item in range(len(items)):
@@ -60,7 +60,7 @@ Select an option:
     elif user_input == 3:
         print("------- TO DO LISTS -------")
         items = todo.get()
-        if items == []:
+        if not items:
             print("The list is currently empty.")
         else:
             for item in range(len(items)):
@@ -69,7 +69,7 @@ Select an option:
     elif user_input == 4:
         print("------- REMOVE AN ITEM -------")
         items = todo.get()
-        if items == []:
+        if not items:
             print("The list is currently empty.")
         else:
             for item in range(len(items)):
