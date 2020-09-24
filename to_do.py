@@ -48,7 +48,8 @@ Select an option:
                 print(item + 1, ".", items[item])
             index = int(input(">>> Enter the item number to modify: "))
             index -= 1
-            todo.add(items[index])
+            item = input(">>> Add: ")
+            items[index] = todo.add(item)
             print("Item is modified successfully.")
 
         #for item in range(len(items)):
