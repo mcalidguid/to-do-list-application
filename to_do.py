@@ -5,8 +5,8 @@ class ToDo:
     def add(self, entry):
         self.items.append(entry)
 
-    # def update(self, item):
-    # 	self.items.replace(item)
+    #def update(self, index):
+    #    self.items.replace(index)
 
     def get(self) -> object:
         return self.items
@@ -40,8 +40,14 @@ Select an option:
 
     elif user_input == 2:
         print("------- UPDATE AN ITEM -------")
-        #items = todo.get()
-        print(">>>: Item List:")    # to be removed
+        items = todo.get()
+        if items == []:
+            print("The list is currently empty.")
+        else:
+            for item in range(len(items)):
+                print(item + 1, ".", items[item])
+                item = int(input(">>> Enter the item number to modify: "))
+
         #for item in range(len(items)):
         #    print(item + 1, ".", items[item])
         #item = int(input(">>>: Enter the item number: "))
@@ -63,14 +69,18 @@ Select an option:
     elif user_input == 4:
         print("------- REMOVE AN ITEM -------")
         items = todo.get()
-        for item in range(len(items)):
-            print(". ".join(item+1, items[item]))
-        item = int(input(">>> Enter the item number to remove: "))
-        result = todo.delete(item-1)
-        if result == 0:
-            print("Invalid item number. Please try again.")
+        if items == []:
+            print("The list is currently empty.")
         else:
-            print("Item is deleted successfully.")
+            for item in range(len(items)):
+                print(item+1, ".", items[item])
+                item = int(input(">>> Enter the item number to remove: "))
+                result = todo.delete(item-1)
+                #print(result)
+                if result == 0:
+                    print("Invalid item number. Please try again.")
+                else:
+                    print("Item is deleted successfully.")
 
     elif user_input == 5:
         print("Danke, tschüss!~")
