@@ -64,8 +64,8 @@ Select an option:
         print("------- REMOVE AN ITEM -------")
         items = todo.get()
         for item in range(len(items)):
-            print(item + 1, ".", items[item])
-        item = int(input(">>> Enter the item number: "))
+            print(". ".join(item+1, items[item]))
+        item = int(input(">>> Enter the item number to remove: "))
         result = todo.delete(item-1)
         if result == 0:
             print("Invalid item number. Please try again.")
