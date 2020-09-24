@@ -46,7 +46,10 @@ Select an option:
         else:
             for item in range(len(items)):
                 print(item + 1, ".", items[item])
-                item = int(input(">>> Enter the item number to modify: "))
+            index = int(input(">>> Enter the item number to modify: "))
+            index -= 1
+            todo.add(items[index])
+            print("Item is modified successfully.")
 
         #for item in range(len(items)):
         #    print(item + 1, ".", items[item])
@@ -74,13 +77,13 @@ Select an option:
         else:
             for item in range(len(items)):
                 print(item+1, ".", items[item])
-                item = int(input(">>> Enter the item number to remove: "))
-                result = todo.delete(item-1)
-                #print(result)
-                if result == 0:
-                    print("Invalid item number. Please try again.")
-                else:
-                    print("Item is deleted successfully.")
+            item = int(input(">>> Enter the item number to remove: "))
+            result = todo.delete(item-1)
+            #print(result)
+            if result == 0:
+                print("Invalid item number. Please try again.")
+            else:
+                print("Item is deleted successfully.")
 
     elif user_input == 5:
         print("Danke, tschüss!~")
