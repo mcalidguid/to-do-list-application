@@ -8,7 +8,7 @@ class ToDo:
     #def update(self, index):
     #    self.items.replace(index)
 
-    def get(self) -> object:
+    def get(self):
         return self.items
 
     def delete(self, index):
@@ -76,10 +76,10 @@ Select an option:
         if not items:
             print("The list is currently empty.")
         else:
-            for item in range(len(items)):
-                print(item+1, ".", items[item])
-            item = int(input(">>> Enter the item number to remove: "))
             try:
+                for item in range(len(items)):
+                    print(item + 1, ".", items[item])
+                item = int(input(">>> Enter the item number to remove: "))
                 print("haha")
                 # if item == 0:
                 #     print("Invalid input.")
@@ -92,8 +92,8 @@ Select an option:
                 #         print("Invalid item number. Please try again.")
                 #     else:
                 #         print("Item is deleted successfully.")
-            except ValueError: #not working
-                print("Invalid input.")
+            except ValueError as e:
+                print('Error type: ', type(e), "is occurring. Please try again.")
 
     elif user_input == 5:
         print("Danke, tschüss!~")
