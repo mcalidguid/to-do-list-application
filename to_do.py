@@ -44,22 +44,28 @@ Select an option:
         if not items:
             print("The list is currently empty.")
         else:
-            for item in range(len(items)):
-                print(item + 1, ".", items[item])
-            index = int(input(">>> Enter the item number to modify: "))
-            index -= 1
-            item = input(">>> Add: ")
-            items[index] = todo.add(item)
-            print("Item is modified successfully.")
-
-        #for item in range(len(items)):
-        #    print(item + 1, ".", items[item])
-        #item = int(input(">>>: Enter the item number: "))
-        #result = todo.delete(item-1)
-        #if result == -1:
-        #    print(">>>: Invalid item number. Please try again")
-        #else:
-        #    print(">>>: Item is updated successfully")
+            try:
+                for item in range(len(items)):
+                    print(item + 1, ".", items[item])
+                item = int(input(">>> Enter the item number to remove: "))
+                if item == 0:
+                    print("Invalid input.")
+                else:
+                    result = todo.delete(item-1)
+                    if result == -1:
+                        print("Invalid item number. Please try again.")
+                    else:
+                        todo.add(item-1)
+                        print("Item is modified successfully.")
+            except ValueError as e:
+                print('Error type: ', type(e), "is occurring. Please try again.")
+            # for item in range(len(items)):
+            #     print(item + 1, ".", items[item])
+            # index = int(input(">>> Enter the item number to modify: "))
+            # index -= 1
+            # item = input(">>> Add: ")
+            # items[index] = todo.add(item)
+            # print("Item is modified successfully.")
 
     elif user_input == 3:
         print("------- TO DO LISTS -------")
