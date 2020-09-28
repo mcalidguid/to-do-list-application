@@ -80,18 +80,14 @@ Select an option:
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
                 item = int(input(">>> Enter the item number to remove: "))
-                print("haha")
-                # if item == 0:
-                #     print("Invalid input.")
-                # else:
-                #     result = todo.delete(item-1)
-                #     print(result)
-                #     if result == -1:
-                #         print("Invalid item number. Please try again.")
-                #     elif result == 0:
-                #         print("Invalid item number. Please try again.")
-                #     else:
-                #         print("Item is deleted successfully.")
+                if item == 0:
+                    print("Invalid input.")
+                else:
+                    result = todo.delete(item-1)
+                    if result == -1:
+                        print("Invalid item number. Please try again.")
+                    else:
+                        print("Item is deleted successfully.")
             except ValueError as e:
                 print('Error type: ', type(e), "is occurring. Please try again.")
 
