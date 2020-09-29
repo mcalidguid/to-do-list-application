@@ -87,7 +87,7 @@ Select an option:
                     print(item + 1, ".", items[item])
                 item = int(input(">>> Enter the item number to remove: "))
                 if item == 0:
-                    print("Invalid input.")
+                    print("Invalid item number. Please try again.")
                 else:
                     result = todo.delete(item-1)
                     if result == -1:
