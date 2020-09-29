@@ -47,7 +47,7 @@ Select an option:
             try:
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
-                item = int(input(">>> Enter the item number to remove: "))
+                item = int(input(">>> Enter the item number to modify: "))
                 if item == 0:
                     print("Invalid input.")
                 else:
