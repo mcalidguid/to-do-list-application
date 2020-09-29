@@ -51,15 +51,6 @@ Select an option:
                         new_item = input(">>> New value: ")
                         items[item-1] = new_item
                         print("Item is modified successfully.")
-                        # result = todo.delete(item-1)
-                        # print(result)
-                        # if result == -1:
-                        #     print("Invalid item number. Please try again.")
-                        # else:
-                        #     new_item = input(">>> Add: ")
-                        #     print(item)
-                        #     #items[item+1] = new_item
-                        #     print("Item is modified successfully.")
                 except ValueError as e:
                     print('Error type: ', type(e), "is occurring. Please try again.")
 
