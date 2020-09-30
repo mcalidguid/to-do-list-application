@@ -41,9 +41,9 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
+                for item in range(len(items)):
+                    print(item + 1, ".", items[item])
                 try:
-                    for item in range(len(items)):
-                        print(item + 1, ".", items[item])
                     item = int(input(">>> Enter the item number to modify: "))
                     if item == 0 or item > len(items):
                         print("Invalid item number. Please try again.")
@@ -69,9 +69,9 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
+                for item in range(len(items)):
+                    print(item + 1, ".", items[item])
                 try:
-                    for item in range(len(items)):
-                        print(item + 1, ".", items[item])
                     item = int(input(">>> Enter the item number to remove: "))
                     if item == 0:
                         print("Invalid item number. Please try again.")
