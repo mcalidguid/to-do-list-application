@@ -32,6 +32,7 @@ Select an option:
         if user_input == 1:
             print("------- ADD AN ITEM -------")
             item = input(">>> Add: ")
+            # call the add function and append the item to the current items list
             todo.add(item)
             print("Item is added successfully.")
 
@@ -41,6 +42,7 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
+                # display the current items list
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
                 try:
@@ -48,6 +50,7 @@ Select an option:
                     if item == 0 or item > len(items):
                         print("Invalid item number. Please try again.")
                     else:
+                        # update the value of the current list
                         new_item = input(">>> New value: ")
                         items[item-1] = new_item
                         print("Item is modified successfully.")
@@ -60,6 +63,7 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
+                # display the current items list
                 for item in range(len(items)):
                     print(item+1, ".", items[item])
 
@@ -69,6 +73,7 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
+                # display the current items list
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
                 try:
@@ -76,6 +81,7 @@ Select an option:
                     if item == 0:
                         print("Invalid item number. Please try again.")
                     else:
+                        # remove the item in the items list
                         result = todo.delete(item-1)
                         if result == -1:
                             print("Invalid item number. Please try again.")
