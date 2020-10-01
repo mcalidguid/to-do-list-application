@@ -18,11 +18,11 @@ class ToDo:
 todo = ToDo()
 
 while True:
-    print("""---------------------
+    print("""~#--------------#~  MENU  ~#--------------#~
 Select an option:
     Enter \"1\" to add an item
-    Enter \"2\" to update an item
-    Enter \"3\" to view the complete items
+    Enter \"2\" to view the complete items
+    Enter \"3\" to update an item
     Enter \"4\" to delete the item
     Enter \"5\" to exit
     """)
@@ -37,12 +37,22 @@ Select an option:
             print("Item is added successfully.")
 
         elif user_input == 2:
+            print("------- TO DO LISTS -------")
+            items = todo.get()
+            if not items:
+                print("The list is currently empty.")
+            else:
+                # display the current list if not empty
+                for item in range(len(items)):
+                    print(item + 1, ".", items[item])
+
+        elif user_input == 3:
             print("------- UPDATE AN ITEM -------")
             items = todo.get()
             if not items:
                 print("The list is currently empty.")
             else:
-                # display the current list
+                # display the current list if not empty
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
                 try:
@@ -52,20 +62,10 @@ Select an option:
                     else:
                         # update the item in the list
                         new_item = input(">>> New value: ")
-                        items[item-1] = new_item
+                        items[item - 1] = new_item
                         print("Item is modified successfully.")
                 except ValueError as e:
                     print('Error type: ', type(e), "is occurring. Please try again.")
-
-        elif user_input == 3:
-            print("------- TO DO LISTS -------")
-            items = todo.get()
-            if not items:
-                print("The list is currently empty.")
-            else:
-                # display the current list
-                for item in range(len(items)):
-                    print(item+1, ".", items[item])
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
@@ -73,7 +73,7 @@ Select an option:
             if not items:
                 print("The list is currently empty.")
             else:
-                # display the current list
+                # display the current list if not empty
                 for item in range(len(items)):
                     print(item + 1, ".", items[item])
                 try:
