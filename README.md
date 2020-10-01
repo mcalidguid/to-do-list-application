@@ -6,6 +6,7 @@ This Todo app will have several main features such as:
 * Getting all items from the list
 * Updating an item in the list
 * Deleting an item from the list
+
 These are often referred to as CRUD operations, for create, read, update, and delete.
 
 The program uses the following concept:
