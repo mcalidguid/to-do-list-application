@@ -3,10 +3,19 @@ class ToDo:
         self.items = []
 
     def add(self, entry):
+        # append the added entry to the current list
         self.items.append(entry)
+        return print("Item is added successfully.")
 
     def get(self):
-        return self.items
+        # verify if current list is empty
+        if not self.items:
+            return print("The list is currently empty.")
+        # display the current list if not empty
+        else:
+            for entry in range(len(self.items)):
+                print(entry + 1, ".", self.items[entry])
+            return self.items
 
     def delete(self, index):
         try:
@@ -32,63 +41,43 @@ Select an option:
         if user_input == 1:
             print("------- ADD AN ITEM -------")
             item = input(">>> Add: ")
-            # call the add function and append the item to the current list
             todo.add(item)
-            print("Item is added successfully.")
 
         elif user_input == 2:
             print("------- TO DO LISTS -------")
             items = todo.get()
-            if not items:
-                print("The list is currently empty.")
-            else:
-                # display the current list if not empty
-                for item in range(len(items)):
-                    print(item + 1, ".", items[item])
 
         elif user_input == 3:
             print("------- UPDATE AN ITEM -------")
             items = todo.get()
-            if not items:
-                print("The list is currently empty.")
-            else:
-                # display the current list if not empty
-                for item in range(len(items)):
-                    print(item + 1, ".", items[item])
-                try:
-                    item = int(input(">>> Enter the item number to modify: "))
-                    if item == 0 or item > len(items):
-                        print("Invalid item number. Please try again.")
-                    else:
-                        # update the item in the list
-                        new_item = input(">>> New value: ")
-                        items[item - 1] = new_item
-                        print("Item is modified successfully.")
-                except ValueError as e:
-                    print('Error type: ', type(e), "is occurring. Please try again.")
+            try:
+                item = int(input(">>> Enter the item number to modify: "))
+                if item == 0 or item > len(items):
+                    print("Invalid item number. Please try again.")
+                else:
+                    # update the item in the list
+                    new_item = input(">>> New value: ")
+                    items[item - 1] = new_item
+                    print("Item is modified successfully.")
+            except ValueError as e:
+                print('Error type: ', type(e), "is occurring. Please try again.")
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
             items = todo.get()
-            if not items:
-                print("The list is currently empty.")
-            else:
-                # display the current list if not empty
-                for item in range(len(items)):
-                    print(item + 1, ".", items[item])
-                try:
-                    item = int(input(">>> Enter the item number to remove: "))
-                    if item == 0:
+            try:
+                item = int(input(">>> Enter the item number to remove: "))
+                if item == 0:
+                    print("Invalid item number. Please try again.")
+                else:
+                    # remove the item in the list
+                    result = todo.delete(item-1)
+                    if result == -1:
                         print("Invalid item number. Please try again.")
                     else:
-                        # remove the item in the list
-                        result = todo.delete(item-1)
-                        if result == -1:
-                            print("Invalid item number. Please try again.")
-                        else:
-                            print("Item is deleted successfully.")
-                except ValueError as e:
-                    print('Error type: ', type(e), "is occurring. Please try again.")
+                        print("Item is deleted successfully.")
+            except ValueError as e:
+                print('Error type: ', type(e), "is occurring. Please try again.")
 
         elif user_input == 5:
             print("Danke, tschüss!~")
