@@ -9,13 +9,16 @@ class ToDo:
         print("Item is added successfully.\n")
 
     def get(self):
-        # verify if current list is empty
         if not self.items:
+            # verify if current list is empty
             print("The list is currently empty.\n")
-        # display the current list if not empty
+            return 0
         else:
+            # display the current list if not empty
             for entry in range(len(self.items)):
                 print(entry + 1, ".", self.items[entry])
+            print("\n")
+            return 1
 
     def update(self):
         entry = int(input(">>> Enter the item number to modify: "))
@@ -32,8 +35,8 @@ class ToDo:
         if entry == 0:
             print("Invalid item number. Please try again.\n")
         else:
-            # remove the item in the list
             try:
+                # remove the item in the list
                 self.items.pop(entry-1)
                 print("Item is deleted successfully.")
             except IndexError:
@@ -67,19 +70,19 @@ Select an option:
 
         elif user_input == 3:
             print("------- UPDATE AN ITEM -------")
-            todo.get()
-            try:
-                todo.update()
-            except ValueError as e:
-                todo.message(e)
+            if todo.get() == 1:
+                try:
+                    todo.update()
+                except ValueError as e:
+                    todo.message(e)
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
-            todo.get()
-            try:
-                todo.delete()
-            except ValueError as e:
-                todo.message(e)
+            if todo.get() == 1:
+                try:
+                    todo.delete()
+                except ValueError as e:
+                    todo.message(e)
 
         elif user_input == 5:
             print("Danke, tschüss!~")
