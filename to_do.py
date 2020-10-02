@@ -5,19 +5,20 @@ class ToDo:
     def add(self, entry):
         # append the added entry to the current list
         self.items.append(entry)
-        return print("Item is added successfully.\n")
+        print("Item is added successfully.\n")
 
     def get(self):
         # verify if current list is empty
         if not self.items:
-            return print("The list is currently empty.\n")
+            print("The list is currently empty.\n")
         # display the current list if not empty
         else:
             for entry in range(len(self.items)):
                 print(entry + 1, ".", self.items[entry])
             return self.items
 
-    def update(self, entry):
+    def update(self):
+        entry = int(input(">>> Enter the item number to modify: "))
         if entry == 0 or entry > len(self.items):
             print("Invalid item number. Please try again.\n")
         else:
@@ -60,17 +61,9 @@ Select an option:
             print("------- UPDATE AN ITEM -------")
             items = todo.get()
             try:
-                item = int(input(">>> Enter the item number to modify: "))
-                todo.update(item)
-                # if item == 0 or item > len(items):
-                #     print("Invalid item number. Please try again.")
-                # else:
-                #     # update the item in the list
-                #     new_item = input(">>> New value: ")
-                #     items[item - 1] = new_item
-                #     print("Item is modified successfully.")
+                todo.update()
             except ValueError as e:
-                print('Error type: ', type(e), "is occurring. Please try again.")
+                print('Error type: ', type(e), "is occurring. Please try again.\n")
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
