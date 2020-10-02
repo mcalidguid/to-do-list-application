@@ -9,15 +9,14 @@ class ToDo:
         print("Item is added successfully.\n")
 
     def get(self):
+        # verify if current list is empty
         if not self.items:
-            # verify if current list is empty
             print("The list is currently empty.\n")
             return 0
         else:
             # display the current list if not empty
             for entry in range(len(self.items)):
                 print(entry + 1, ".", self.items[entry])
-            print("\n")
             return 1
 
     def update(self):
@@ -38,9 +37,9 @@ class ToDo:
             try:
                 # remove the item in the list
                 self.items.pop(entry-1)
-                print("Item is deleted successfully.")
+                print("Item is deleted successfully.\n")
             except IndexError:
-                print("Invalid item number. Please try again.")
+                print("Invalid item number. Please try again.\n")
 
     def message(self, error):
         print("Error Type:", type(error), "is occurring. Please try again.\n")
