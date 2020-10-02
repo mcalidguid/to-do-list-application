@@ -2,9 +2,10 @@ class ToDo:
     def __init__(self):
         self.items = []
 
-    def add(self, entry):
+    def add(self):
+        item = input(">>> Add: ")
         # append the added entry to the current list
-        self.items.append(entry)
+        self.items.append(item)
         print("Item is added successfully.\n")
 
     def get(self):
@@ -15,7 +16,6 @@ class ToDo:
         else:
             for entry in range(len(self.items)):
                 print(entry + 1, ".", self.items[entry])
-            return self.items
 
     def update(self):
         entry = int(input(">>> Enter the item number to modify: "))
@@ -56,16 +56,15 @@ Select an option:
         user_input = int(input(">>>: "))
         if user_input == 1:
             print("------- ADD AN ITEM -------")
-            item = input(">>> Add: ")
-            todo.add(item)
+            todo.add()
 
         elif user_input == 2:
             print("------- TO DO LISTS -------")
-            items = todo.get()
+            todo.get()
 
         elif user_input == 3:
             print("------- UPDATE AN ITEM -------")
-            items = todo.get()
+            todo.get()
             try:
                 todo.update()
             except ValueError as e:
@@ -73,19 +72,9 @@ Select an option:
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
-            items = todo.get()
+            todo.get()
             try:
                 todo.delete()
-                # item = int(input(">>> Enter the item number to remove: "))
-                # if item == 0:
-                #     print("Invalid item number. Please try again.")
-                # else:
-                #     # remove the item in the list
-                #     result = todo.delete(item-1)
-                #     if result == -1:
-                #         print("Invalid item number. Please try again.")
-                #     else:
-                #         print("Item is deleted successfully.")
             except ValueError as e:
                 print('Error type: ', type(e), "is occurring. Please try again.")
 
