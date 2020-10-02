@@ -27,11 +27,17 @@ class ToDo:
             self.items[entry - 1] = new_entry
             print("Item is modified successfully.\n")
 
-    def delete(self, index):
-        try:
-            self.items.pop(index)
-        except IndexError:
-            return -1
+    def delete(self):
+        entry = int(input(">>> Enter the item number to remove: "))
+        if entry == 0:
+            print("Invalid item number. Please try again.\n")
+        else:
+            # remove the item in the list
+            try:
+                self.items.pop(entry)
+                print("Item is deleted successfully.\n")
+            except IndexError:
+                print("Invalid item number. Please try again.\n")
 
 
 todo = ToDo()
@@ -69,16 +75,17 @@ Select an option:
             print("------- REMOVE AN ITEM -------")
             items = todo.get()
             try:
-                item = int(input(">>> Enter the item number to remove: "))
-                if item == 0:
-                    print("Invalid item number. Please try again.")
-                else:
-                    # remove the item in the list
-                    result = todo.delete(item-1)
-                    if result == -1:
-                        print("Invalid item number. Please try again.")
-                    else:
-                        print("Item is deleted successfully.")
+                todo.delete()
+                # item = int(input(">>> Enter the item number to remove: "))
+                # if item == 0:
+                #     print("Invalid item number. Please try again.")
+                # else:
+                #     # remove the item in the list
+                #     result = todo.delete(item-1)
+                #     if result == -1:
+                #         print("Invalid item number. Please try again.")
+                #     else:
+                #         print("Item is deleted successfully.")
             except ValueError as e:
                 print('Error type: ', type(e), "is occurring. Please try again.")
 
