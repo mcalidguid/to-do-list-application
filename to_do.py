@@ -39,6 +39,9 @@ class ToDo:
             except IndexError:
                 print("Invalid item number. Please try again.")
 
+    def message(self, error):
+        print("Error Type:", type(error), "is occurring. Please try again.\n")
+
 
 todo = ToDo()
 
@@ -68,7 +71,7 @@ Select an option:
             try:
                 todo.update()
             except ValueError as e:
-                print('Error type: ', type(e), "is occurring. Please try again.\n")
+                todo.message(e)
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
@@ -76,14 +79,14 @@ Select an option:
             try:
                 todo.delete()
             except ValueError as e:
-                print('Error type: ', type(e), "is occurring. Please try again.")
+                todo.message(e)
 
         elif user_input == 5:
             print("Danke, tschüss!~")
             break
 
         else:
-            print("Invalid input.")
+            print("Invalid input.\n")
 
     except ValueError as e:
-        print('Error type: ', type(e), "is occurring. Please try again.")
+        todo.message(e)
