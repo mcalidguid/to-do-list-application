@@ -34,10 +34,10 @@ class ToDo:
         else:
             # remove the item in the list
             try:
-                self.items.pop(entry)
-                print("Item is deleted successfully.\n")
+                self.items.pop(entry-1)
+                print("Item is deleted successfully.")
             except IndexError:
-                print("Invalid item number. Please try again.\n")
+                print("Invalid item number. Please try again.")
 
 
 todo = ToDo()
