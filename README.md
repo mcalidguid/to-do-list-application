@@ -1,13 +1,11 @@
 # to-do-list-application
 
 ## Description
-This Todo app will have several main features such as:
+This Todo app will have several main features such as below. These are often referred to as CRUD operations for create, read, update and delete.
 * Adding items to a list
 * Getting all items from the list
 * Updating an item in the list
 * Deleting an item from the list
-
-These are often referred to as CRUD operations for create, read, update and delete.
 
 The program uses the following concept:
 * if else statement
