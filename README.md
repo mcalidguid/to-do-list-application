@@ -25,7 +25,7 @@ cmd > C:\python38\python.exe C:\python\projects\to-do-list-application\to_do.py
 _Note: Modify the path of the python file accordingly_
 
 ## Sample Output
-Happy Path:
+I. Happy Path:
 ```
 ~#--------------#~  MENU  ~#--------------#~
 Select an option:
@@ -187,7 +187,7 @@ Select an option:
 Danke, tschüss! ^_^
 ```
 
-Negative Test:
+II. Negative Test:
 ```
 ~#--------------#~  MENU  ~#--------------#~
 Select an option:
