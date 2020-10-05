@@ -52,11 +52,10 @@ while True:
     print("""~#--------------#~  MENU  ~#--------------#~
 Select an option:
     Enter \"1\" to add an item
-    Enter \"2\" to view the complete items
+    Enter \"2\" to view the complete list
     Enter \"3\" to update an item
-    Enter \"4\" to delete the item
-    Enter \"5\" to exit
-    """)
+    Enter \"4\" to delete an item
+    Enter \"5\" to exit""")
 
     try:
         user_input = int(input(">>>: "))
@@ -67,6 +66,7 @@ Select an option:
         elif user_input == 2:
             print("------- TO DO LISTS -------")
             todo.get()
+            print()
 
         elif user_input == 3:
             print("------- UPDATE AN ITEM -------")
