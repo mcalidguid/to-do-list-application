@@ -4,7 +4,7 @@ class ToDo:
 
     def add(self):
         item = input(">>> Add: ")
-        # append the added entry to the current list
+        # append the added item to the current list
         self.items.append(item)
         print("Item is added successfully.\n")
 
@@ -15,34 +15,35 @@ class ToDo:
             return 0
         else:
             # display the current list if not empty
-            for entry in range(len(self.items)):
-                print(entry + 1, ".", self.items[entry])
+            for item in range(len(self.items)):
+                print(item + 1, ".", self.items[item])
             return 1
 
     def update(self):
-        entry = int(input(">>> Enter the item number to modify: "))
-        if entry == 0 or entry > len(self.items):
+        index = int(input(">>> Enter the item number to modify: "))
+        if index == 0 or index > len(self.items):
             print("Invalid item number. Please try again.\n")
         else:
             # update the item in the list
-            new_entry = input(">>> New value: ")
-            self.items[entry - 1] = new_entry
+            item = input(">>> New value: ")
+            self.items[index - 1] = item
             print("Item is modified successfully.\n")
 
     def delete(self):
-        entry = int(input(">>> Enter the item number to remove: "))
-        if entry == 0:
+        index = int(input(">>> Enter the item number to remove: "))
+        if index == 0:
             print("Invalid item number. Please try again.\n")
         else:
             try:
                 # remove the item in the list
-                self.items.pop(entry-1)
+                self.items.pop(index-1)
                 print("Item is deleted successfully.\n")
             except IndexError:
                 print("Invalid item number. Please try again.\n")
 
-    def message(self, error):
-        print("Error Type:", type(error), "is occurring. Please try again.\n")
+
+def message(error):
+    print("Error Type:", type(error), "is occurring. Please try again.\n")
 
 
 todo = ToDo()
@@ -73,7 +74,7 @@ Select an option:
                 try:
                     todo.update()
                 except ValueError as e:
-                    todo.message(e)
+                    message(e)
 
         elif user_input == 4:
             print("------- REMOVE AN ITEM -------")
@@ -81,14 +82,14 @@ Select an option:
                 try:
                     todo.delete()
                 except ValueError as e:
-                    todo.message(e)
+                    message(e)
 
         elif user_input == 5:
-            print("Danke, tschüss!~")
+            print("Danke, tschüss! ^_^")
             break
 
         else:
             print("Invalid input.\n")
 
     except ValueError as e:
-        todo.message(e)
+        message(e)
